@@ -26,3 +26,8 @@ ProjectTD is a solo-developed tower defense game built in Godot 4.4.1 as a side 
 **[17-04-2025]**
 - Set up Godot project with clean folder structure
 - Creating roadmap for this project
+
+**[20-04-2025]**
+- Added multilayer tilemap
+- Added simple enemy that follows path
+- Added camera + its movement and zooming logic
