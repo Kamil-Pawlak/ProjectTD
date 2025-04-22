@@ -35,8 +35,8 @@ tracks/0/keys = {
 "values": [12, 13, 14, 15]
 }
 
-[sub_resource type="Animation" id="Animation_7cewq"]
-resource_name = "walk_right"
+[sub_resource type="Animation" id="Animation_k7o7a"]
+resource_name = "walk_left"
 length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
@@ -52,8 +52,8 @@ tracks/0/keys = {
 "values": [16, 17, 18, 19]
 }
 
-[sub_resource type="Animation" id="Animation_k7o7a"]
-resource_name = "walk_left"
+[sub_resource type="Animation" id="Animation_7cewq"]
+resource_name = "walk_right"
 length = 0.4
 loop_mode = 1
 tracks/0/type = "value"

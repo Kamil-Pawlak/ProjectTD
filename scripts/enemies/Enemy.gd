@@ -9,6 +9,7 @@ var anim_player: AnimationPlayer
 func _ready() -> void:
 	anim_player = $Sprite2D/AnimationPlayer
 	previous_position = global_position
+	add_to_group("enemies")
 
 func _process(delta):
 	if path_follow:

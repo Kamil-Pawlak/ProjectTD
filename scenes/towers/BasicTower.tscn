@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://rforeo45gic"]
+
+[ext_resource type="Script" uid="uid://duyvatkh5dsh0" path="res://scripts/tower/basic_tower.gd" id="1_3ygih"]
+[ext_resource type="Texture2D" uid="uid://ccjpmb7qcr26e" path="res://assets/towers/indicator_circle.png" id="1_p0n63"]
+[ext_resource type="Texture2D" uid="uid://mhdivda3ybt1" path="res://assets/towers/Towers.png" id="2_3ygih"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3uo4s"]
+radius = 100.0
+
+[node name="BasicTower" type="Node2D"]
+z_index = 100
+y_sort_enabled = true
+script = ExtResource("1_3ygih")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_3uo4s")
+
+[node name="RangeIndicator" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="RangeIndicator"]
+modulate = Color(1, 1, 1, 0.439216)
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("1_p0n63")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_3ygih")
+hframes = 3
+frame = 2
