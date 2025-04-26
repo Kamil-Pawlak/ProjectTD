@@ -31,5 +31,6 @@ func _on_body_exited(body):
 		enemies_in_range.erase(body)
 
 func _shoot(target):
-	print("Shooting at: ", target)
-	# Add your shooting logic here (e.g., spawn projectile)
+	if target and target.is_inside_tree():
+		if target.has_method("take_damage"):
+			target.take_damage(25) 

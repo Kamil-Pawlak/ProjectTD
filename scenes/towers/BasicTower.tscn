@@ -18,6 +18,7 @@ script = ExtResource("1_3ygih")
 shape = SubResource("CircleShape2D_3uo4s")
 
 [node name="RangeIndicator" type="Node2D" parent="."]
+visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="RangeIndicator"]
 modulate = Color(1, 1, 1, 0.439216)
@@ -30,5 +31,6 @@ texture = ExtResource("1_p0n63")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("2_3ygih")
+offset = Vector2(0, -10)
 hframes = 3
 frame = 2

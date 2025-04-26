@@ -5,6 +5,7 @@ var path_follow: PathFollow2D = null
 var previous_position
 
 var anim_player: AnimationPlayer
+var health = 100
 
 func _ready() -> void:
 	anim_player = $Sprite2D/AnimationPlayer
@@ -42,3 +43,15 @@ func _update_animation(direction: Vector2) -> void:
 func _play_anim_if_not_playing(name: String) -> void:
 	if anim_player.current_animation != name:
 		anim_player.play(name)
+
+
+func take_damage(amount: int):
+	health -= amount
+	print("Enemy took ", amount, " damage! Health now: ", health)
+	
+	if health <= 0:
+		die()
+
+func die():
+	queue_free()
+	print("Enemy died!")

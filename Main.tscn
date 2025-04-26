@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://bdjxwe8gwcqt3"]
+[gd_scene load_steps=26 format=4 uid="uid://bdjxwe8gwcqt3"]
 
 [ext_resource type="Texture2D" uid="uid://dnpo37ov7chj0" path="res://assets/sprites/tilesets/TX Plant.png" id="1_03owx"]
 [ext_resource type="Script" uid="uid://btu0dbgmuqtcb" path="res://scripts/core/build_system.gd" id="1_5vvyt"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c6kry1bcvslma" path="res://assets/sprites/tilesets/TX Tileset Wall.png" id="9_sc1dx"]
 [ext_resource type="Script" uid="uid://bdrn7gfwcs5fu" path="res://scripts/core/Spawner.gd" id="10_wkp8b"]
 [ext_resource type="Script" uid="uid://dae1mfy0voy0m" path="res://scripts/core/Camera.gd" id="11_20pc6"]
+[ext_resource type="Script" uid="uid://dyq6ja700iqsk" path="res://scripts/core/ui.gd" id="13_c6i3y"]
 
 [sub_resource type="Curve2D" id="Curve2D_03owx"]
 bake_interval = 0.01
@@ -654,6 +655,8 @@ metadata/_edit_horizontal_guides_ = [597.0]
 [node name="GameManager" type="Node2D" parent="."]
 script = ExtResource("1_5vvyt")
 
+[node name="BuildOverlay" type="Node2D" parent="."]
+
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(2.38419e-06, -0.428558)
 scale = Vector2(1, 1.00128)
@@ -676,6 +679,7 @@ tile_map_data = PackedByteArray("AAASAPv/AwABAAMAAAASAPz/AwABAAQAAAATAPv/AwACAAM
 tile_set = SubResource("TileSet_sqvbp")
 
 [node name="BuildLayer" type="TileMapLayer" parent="TileHolder"]
+visible = false
 modulate = Color(1, 1, 1, 0.388235)
 z_index = 100
 texture_filter = 1
@@ -702,6 +706,7 @@ tile_map_data = PackedByteArray("AADx//L/BQANAAQAAADx//P/BQANAAUAAADy//L/BQAOAAQ
 tile_set = SubResource("TileSet_sqvbp")
 
 [node name="TowerHolder" type="Node2D" parent="."]
+z_index = 100
 
 [node name="Spawner" type="Node2D" parent="."]
 script = ExtResource("10_wkp8b")
@@ -714,4 +719,26 @@ ignore_time_scale = true
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("11_20pc6")
 
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("13_c6i3y")
+
+[node name="Panel" type="Panel" parent="UI"]
+anchors_preset = -1
+anchor_left = 0.921
+anchor_right = 0.921
+offset_left = -21.9921
+offset_right = 91.0079
+offset_bottom = 232.0
+grow_horizontal = 0
+size_flags_stretch_ratio = 0.0
+
+[node name="Button" type="Button" parent="UI/Panel"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 1.0
+offset_right = 107.0
+offset_bottom = 32.0
+text = "Basic Tower"
+
 [connection signal="timeout" from="Spawner/Timer" to="Spawner" method="_on_timer_timeout"]
+[connection signal="pressed" from="UI/Panel/Button" to="UI" method="_on_basic_tower_button_pressed"]
