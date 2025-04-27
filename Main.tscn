@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://bdjxwe8gwcqt3"]
+[gd_scene load_steps=28 format=4 uid="uid://bdjxwe8gwcqt3"]
 
 [ext_resource type="Texture2D" uid="uid://dnpo37ov7chj0" path="res://assets/sprites/tilesets/TX Plant.png" id="1_03owx"]
 [ext_resource type="Script" uid="uid://btu0dbgmuqtcb" path="res://scripts/core/build_system.gd" id="1_5vvyt"]
@@ -13,6 +13,8 @@
 [ext_resource type="Script" uid="uid://bdrn7gfwcs5fu" path="res://scripts/core/Spawner.gd" id="10_wkp8b"]
 [ext_resource type="Script" uid="uid://dae1mfy0voy0m" path="res://scripts/core/Camera.gd" id="11_20pc6"]
 [ext_resource type="Script" uid="uid://dyq6ja700iqsk" path="res://scripts/core/ui.gd" id="13_c6i3y"]
+[ext_resource type="Texture2D" uid="uid://dvx1fgr7e774s" path="res://assets/sprites/gui/button1.png" id="14_c2ibq"]
+[ext_resource type="Texture2D" uid="uid://mhdivda3ybt1" path="res://assets/towers/Towers.png" id="15_j4qnp"]
 
 [sub_resource type="Curve2D" id="Curve2D_03owx"]
 bake_interval = 0.01
@@ -723,22 +725,123 @@ script = ExtResource("11_20pc6")
 script = ExtResource("13_c6i3y")
 
 [node name="Panel" type="Panel" parent="UI"]
-anchors_preset = -1
-anchor_left = 0.921
-anchor_right = 0.921
-offset_left = -21.9921
-offset_right = 91.0079
-offset_bottom = 232.0
-grow_horizontal = 0
-size_flags_stretch_ratio = 0.0
+custom_minimum_size = Vector2(464, 64)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
 
-[node name="Button" type="Button" parent="UI/Panel"]
-layout_mode = 0
-offset_left = 6.0
-offset_top = 1.0
-offset_right = 107.0
-offset_bottom = 32.0
-text = "Basic Tower"
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -64.0
+offset_right = 64.0
+grow_vertical = 0
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="TextureButton" type="TextureButton" parent="UI/Panel/HBoxContainer/MarginContainer"]
+layout_mode = 2
+tooltip_text = "Basic Tower"
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("14_c2ibq")
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Panel/HBoxContainer/MarginContainer/TextureButton"]
+position = Vector2(32, 30)
+texture = ExtResource("15_j4qnp")
+hframes = 3
+frame = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="UI/Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="TextureButton" type="TextureButton" parent="UI/Panel/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+tooltip_text = "Basic Tower"
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("14_c2ibq")
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Panel/HBoxContainer/MarginContainer2/TextureButton"]
+position = Vector2(32, 30)
+hframes = 3
+frame = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="UI/Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="TextureButton" type="TextureButton" parent="UI/Panel/HBoxContainer/MarginContainer3"]
+layout_mode = 2
+tooltip_text = "Basic Tower"
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("14_c2ibq")
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Panel/HBoxContainer/MarginContainer3/TextureButton"]
+position = Vector2(32, 30)
+hframes = 3
+frame = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="UI/Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="TextureButton" type="TextureButton" parent="UI/Panel/HBoxContainer/MarginContainer4"]
+layout_mode = 2
+tooltip_text = "Basic Tower"
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("14_c2ibq")
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Panel/HBoxContainer/MarginContainer4/TextureButton"]
+position = Vector2(32, 30)
+hframes = 3
+frame = 2
+
+[node name="MarginContainer5" type="MarginContainer" parent="UI/Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="TextureButton" type="TextureButton" parent="UI/Panel/HBoxContainer/MarginContainer5"]
+layout_mode = 2
+tooltip_text = "Basic Tower"
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("14_c2ibq")
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Panel/HBoxContainer/MarginContainer5/TextureButton"]
+position = Vector2(32, 30)
+hframes = 3
+frame = 2
+
+[node name="MarginContainer6" type="MarginContainer" parent="UI/Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="TextureButton" type="TextureButton" parent="UI/Panel/HBoxContainer/MarginContainer6"]
+layout_mode = 2
+tooltip_text = "Basic Tower"
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("14_c2ibq")
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Panel/HBoxContainer/MarginContainer6/TextureButton"]
+position = Vector2(32, 30)
+hframes = 3
+frame = 2
 
 [connection signal="timeout" from="Spawner/Timer" to="Spawner" method="_on_timer_timeout"]
-[connection signal="pressed" from="UI/Panel/Button" to="UI" method="_on_basic_tower_button_pressed"]
+[connection signal="pressed" from="UI/Panel/HBoxContainer/MarginContainer/TextureButton" to="UI" method="_on_basic_tower_button_pressed"]

@@ -14,3 +14,7 @@ config/name="ProjectTD"
 run/main_scene="uid://bdjxwe8gwcqt3"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
