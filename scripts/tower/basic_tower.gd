@@ -32,5 +32,7 @@ func _on_body_exited(body):
 
 func _shoot(target):
 	if target and target.is_inside_tree():
-		if target.has_method("take_damage"):
-			target.take_damage(25) 
+		var projectile = preload("res://scenes/projectiles/arrow_projectile.tscn").instantiate()
+		projectile.global_position = global_position
+		projectile.target = target
+		get_tree().current_scene.add_child(projectile)  # Or tower_holder, depends where you want it
