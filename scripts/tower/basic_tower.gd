@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var range: float = 100.0
+@export var fire_range: float = 100.0
 @export var fire_rate: float = 1.0
 @onready var range_area: Area2D = $Area2D
 
@@ -11,7 +11,7 @@ func _ready():
 	# Set collision shape radius based on range
 	var circle = range_area.get_node("CollisionShape2D").shape
 	if circle is CircleShape2D:
-		circle.radius = range
+		circle.radius = fire_range
 
 	range_area.body_entered.connect(_on_body_entered)
 	range_area.body_exited.connect(_on_body_exited)

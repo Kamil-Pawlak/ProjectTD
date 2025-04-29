@@ -44,7 +44,7 @@ func place_tower_at(grid_pos: Vector2i):
 	
 	stop_build_mode()
 
-func _process(delta):
+func _process(_delta):
 	if not build_mode:
 		return
 	

@@ -6,7 +6,7 @@ var speed: float = 300.0
 var damage: float = 30.0
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if not target or not target.is_inside_tree():
 		queue_free()
 		return

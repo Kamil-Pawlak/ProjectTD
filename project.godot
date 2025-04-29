@@ -11,9 +11,16 @@ config_version=5
 [application]
 
 config/name="ProjectTD"
-run/main_scene="uid://bdjxwe8gwcqt3"
+run/main_scene="uid://56aarqwkcus3"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+window/size/borderless=true
 
 [gui]
 

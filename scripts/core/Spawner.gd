@@ -8,8 +8,8 @@ func get_path_start_position() -> Vector2:
 
 func spawn_enemy():
 	var enemy = enemy_scene.instantiate()
-	var path_follow = PathFollow2D.new()
 	enemy.global_position = get_path_start_position()
+	var path_follow = PathFollow2D.new()
 	path.add_child(path_follow)
 
 	# Assign the follow reference
